@@ -42,26 +42,32 @@ public class quoteserve
    
 public void run()
 {
-   init();
+   loadQuotes();
    ArrayList<String> recentSearches = new ArrayList<String>();
-   String searchText = null;
-   String searchScope = null;
    boolean quit = false;
    while(!quit)
    {
       System.out.println("Welcome to Quotes!\nRecent Searches:" + recentSearches + "\n\nTo search, enter 'search', to quit, enter 'quit':");
       reader = new Scanner(System.in);
-      String cmd = reader.next();
-      if (cmd.equals("search"))
+      String cmd = reader.nextLine();
+      if (cmd.equals("add"))
+      {
+         System.out.println("Enter quotation text: ");
+         String quote = reader.nextLine();
+         System.out.println("Enter author name: ");
+         String author = reader.nextLine();
+         addQuote(quote, author);
+      }
+      else if (cmd.equals("search"))
       {
          System.out.println("Enter text to search for: ");
-         searchText = reader.next();
+         String searchText = reader.nextLine();
          System.out.println("Enter search scope: must be one of 'text', 'author', or 'both': ");
-         searchScope = reader.next();
+         String searchScope = reader.nextLine();
          while (!searchScope.equals("text") && !searchScope.equals("author") && !searchScope.equals("both"))
          {
             System.out.println("Incorrect scope specified, must be exactly one of 'text', 'author', or 'both'. Please enter search scope again: ");
-            searchScope = reader.next();
+            searchScope = reader.nextLine();
          }
          recentSearches.add(searchText);
          if (recentSearches.size() > 5)
@@ -69,42 +75,8 @@ public void run()
             
             
             
-         //run search
-         if (searchText != null && !searchText.equals(""))
-         {  // Received a search request
-            int searchScopeInt = QuoteList.SearchBothVal; // Default
-            if (searchScope != null && !searchScope.equals(""))
-            {  // If no parameter value, let it default.
-               if (searchScope.equals ("quote"))
-               {
-                  searchScopeInt = QuoteList.SearchTextVal;
-               } else if (searchScope.equals ("author"))
-               {
-                  searchScopeInt = QuoteList.SearchAuthorVal;
-               } else if (searchScope.equals ("both"))
-               {
-                  searchScopeInt = QuoteList.SearchBothVal;
-               }
-            }
-
-            QuoteList searchRes = quoteList.search(searchText, searchScopeInt);
-            Quote quoteTmp;
-            if (searchRes.getSize() == 0)
-            {
-               System.out.println ("Your search - "+ searchText +" - did not match any quotes.");
-            }
-            else
-            {
-               System.out.println ("\n\n==== Results: ====");
-               for (int i = 0; i < searchRes.getSize() ; i++)
-               {
-                  quoteTmp = searchRes.getQuote(i);
-                  System.out.println (quoteTmp.getQuoteText());
-                  System.out.println ("--" + quoteTmp.getAuthor() + "");
-               }
-               System.out.println ("\n");
-            }
-         }
+         //run search and print
+         findQuotes(searchText, searchScope);
       }
       else if (cmd.equals("quit"))
       {
@@ -115,16 +87,77 @@ public void run()
       {
          System.out.println("Error, incorrect command specified, must be exactly one of 'search' or quit'.\n");
       }
+      System.out.println("\n");
       
    }
    reader.close();
 }
 
-// init() reads the quotes file from disk and stores in quoteList
-public void init()
+// reads the quotes file from disk and stores in quoteList
+public void loadQuotes()
 {
    QuoteSaxParser qParser = new QuoteSaxParser (quoteFileName);
    quoteList = qParser.getQuoteList();
+}
+
+public void findQuotes(String searchText, String searchScope)
+{
+   if (searchText != null && !searchText.equals(""))
+   {  // Received a search request
+      int searchScopeInt = QuoteList.SearchBothVal; // Default
+      if (searchScope != null && !searchScope.equals(""))
+      {  // If no parameter value, let it default.
+         if (searchScope.equals ("quote"))
+         {
+            searchScopeInt = QuoteList.SearchTextVal;
+         } else if (searchScope.equals ("author"))
+         {
+            searchScopeInt = QuoteList.SearchAuthorVal;
+         } else if (searchScope.equals ("both"))
+         {
+            searchScopeInt = QuoteList.SearchBothVal;
+         }
+      }
+
+      QuoteList searchRes = quoteList.search(searchText, searchScopeInt);
+      Quote quoteTmp;
+      if (searchRes.getSize() == 0)
+      {
+         System.out.println ("Your search - "+ searchText +" - did not match any quotes.");
+      }
+      else
+      {
+         System.out.println ("\n\n==== Results: ====");
+         for (int i = 0; i < searchRes.getSize() ; i++)
+         {
+            quoteTmp = searchRes.getQuote(i);
+            System.out.println (quoteTmp.getQuoteText());
+            System.out.println ("--" + quoteTmp.getAuthor() + "");
+         }
+         System.out.println ("\n");
+      }
+   }
+}
+
+void addQuote(String quote, String author)
+{
+   //error checking the quote, must not be a null string or an empty string
+   if (quote == null || quote.trim().length() < 0)
+   {
+      System.out.println("Error: invalid quote provided (must contain at least one non-whitespace character)!");
+      return;
+   }
+   //error checking the author, must not be a null string or an empty string
+   if (author == null || author.trim().length() < 0)
+   {
+      System.out.println("Error: invalid author provided (must contain at least one non-whitespace character)!");
+      return;
+   }
+   QuoteSaxParser qParser = new QuoteSaxParser(quoteFileName);
+   qParser.addQuote(quote, author);
+   System.out.println("Quote added to the database!");
+   //reload database to include the newly-added quote
+   loadQuotes();
 }
 
 } // end quoteserve class
