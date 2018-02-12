@@ -1,4 +1,4 @@
-package quotes;
+//package quotes;
 
 /**
  * Quote data object.
