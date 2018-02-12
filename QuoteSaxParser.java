@@ -91,19 +91,6 @@ public void addQuote(String quote, String author)
       StreamResult result = new StreamResult(new File(fileName));
       DOMSource source = new DOMSource(document);
       transformer.transform(source, result);
-      
-      //String xmlString = result.getWriter().toString();
-      //System.out.println(xmlString);
-      
-      //quotes.setNamedItem(newQuote);
-      
-      //System.out.println(quote + " --" + author);
-      
-      /*NodeList nodes = document.getElementsByTagName("quote");
-      Text a = doc.createTextNode("quote");
-      Element p = document.createElement("text");
-      p.appendChild(a);
-      nodes.item(0).getParentNode().insertBefore(p, nodes.item(0));*/
    } catch (Exception e)
    {
       e.printStackTrace();

@@ -47,7 +47,7 @@ public void run()
    boolean quit = false;
    while(!quit)
    {
-      System.out.println("Welcome to Quotes!\nRecent Searches:" + recentSearches + "\n\nTo search, enter 'search', to quit, enter 'quit':");
+      System.out.println("Welcome to Quotes!\nRecent Searches:" + recentSearches + "\n\nTo search, enter 'search', to add a new quote, enter 'add', to quit, enter 'quit':");
       reader = new Scanner(System.in);
       String cmd = reader.nextLine();
       if (cmd.equals("add"))
@@ -85,7 +85,7 @@ public void run()
       }
       else
       {
-         System.out.println("Error, incorrect command specified, must be exactly one of 'search' or quit'.\n");
+         System.out.println("Error, incorrect command specified, must be exactly one of 'search' or quit'.");
       }
       System.out.println("\n");
       
@@ -134,7 +134,7 @@ public void findQuotes(String searchText, String searchScope)
             System.out.println (quoteTmp.getQuoteText());
             System.out.println ("--" + quoteTmp.getAuthor() + "");
          }
-         System.out.println ("\n");
+         System.out.println("\n");
       }
    }
 }
