@@ -1,0 +1,20 @@
+The test file does not correspond to the RIPR model because it does not effectively show a failure with respect to the removeDuplicates() methods functionality. With respect to the RIPR model, we have a major problem with this test and the ability to the test to reveal to the user an incorrect state. This is because the assertTrue line of code does not effectively reveal this incorrect state. What the assertTrue line of code does is it checks if the first word equals cookie. with the way the test is written, it doesn't leave any ability for a fault to propagate the program state. Simply said, the test should always come up as true no matter what happens unless we have a remove() method which removes an items from the words object. 
+
+
+
+B. Assuming this test is used to make sure the first instance of the duplicate is retained, I would write it to look like this
+
+@Test
+public void testRemoveDuplicates()
+{
+   words.add ("cookie");
+   words.add ("cake");
+   words.add ("cookie");
+   words.add ("pie");
+   words.removeDuplicates();
+   assertTrue ("removeDuplicates method", words.getFirst().equals ("cookie"));
+}
+
+Now, if the intendeded behavior of testRemoveDuplicates() is to check whether the first
+
+
