@@ -16,35 +16,27 @@ public class QuoteSearchTests {
 
     @Test
     public void match_author_test() {
+        //load quote file and store quotes in a QuoteList
+        QuoteSaxParser qParser = new QuoteSaxParser("quotes.xml");
+        QuoteList quotes = qParser.getQuoteList();
         
-        //Create the quote List to search
-        QuoteList quotes = new QuoteList();
+        //run search
+        QuoteList searchResults = quotes.search("Richard Nixon", 0);
         
-        //Not sure how to put all the quotes in the quotelist here
-        
-        QuoteList searchResults = quotes.search("test", 0);
-        
-        //Need to figure out what we should do for assertion. Maybe Create a Quote object with the exact quote we want?
-        
-        assertTrue(true);
-  
+        assertTrue(searchResults.getSize() == 1 && searchResults.getQuote(0).getQuoteText().equals("I know that you believe you understand what you think I said, but I am not sure you realize that what you heard is not what I meant."));
    }
     
         
     @Test
     public void match_text_test() {
+        //load quote file and store quotes in a QuoteList
+        QuoteSaxParser qParser = new QuoteSaxParser("quotes.xml");
+        QuoteList quotes = qParser.getQuoteList();
         
-        //Create the quote List to search
-        QuoteList quotes = new QuoteList();
+        //run search
+        QuoteList searchResults = quotes.search("Eschew obfuscation!", 1);
         
-        //Not sure how to put all the quotes in the quotelist here
-        
-        QuoteList searchResults = quotes.search("test", 1);
-        
-        //Need to figure out what we should do for assertion. Maybe Create a Quote object with the exact quote we want?
-        
-        assertTrue(true);
-  
+        assertTrue(searchResults.getSize() == 1 && searchResults.getQuote(0).getAuthor().equals("Don Cunningham"));
    }
     
         
