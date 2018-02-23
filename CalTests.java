@@ -73,13 +73,13 @@ public class CalTests {
     
     
     
-    //Exception Tests. They won't actually throw an exception so we'll just test the intended behavior
-    @Test
+    //Exception Tests. Only the first one will throw an exception. The rest will execute. 
+    
+    @Test (expected = ArrayIndexOutOfBoundsException.class)
     public void bad_month1() {
         
         //Create test
         int numDays = Cal.cal(13,1,12,20,1999);
-        System.out.println("badmonth1 is :" + numDays);
         
         assertTrue(numDays==2);
    }
@@ -89,9 +89,8 @@ public class CalTests {
         
         //Create test
         int numDays = Cal.cal(1,32,12,20,1999);
-        System.out.println("badday1 is :" + numDays);
         
-        assertTrue(numDays==2);
+        assertTrue(numDays==322);
    }
     
         
@@ -100,9 +99,8 @@ public class CalTests {
         
         //Create test
         int numDays = Cal.cal(1,1,13,20,1999);
-        System.out.println("badmonth2 is :" + numDays);
         
-        assertTrue(numDays==2);
+        assertTrue(numDays==384);
    }
     
         //Exception Tests
@@ -111,9 +109,8 @@ public class CalTests {
         
         //Create test
         int numDays = Cal.cal(1,1,12,32,1999);
-        System.out.println("badday2 is :" + numDays);
         
-        assertTrue(numDays==2);
+        assertTrue(numDays==365);
    }
     
             //Exception Tests
@@ -122,9 +119,8 @@ public class CalTests {
         
         //Create test
         int numDays = Cal.cal(1,1,12,20,-1999);
-        System.out.println("badyear is :" + numDays);
         
-        assertTrue(numDays==2);
+        assertTrue(numDays==353);
    }
     
 }
