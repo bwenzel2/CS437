@@ -16,7 +16,8 @@ public class QuoteList
    /* package */ static final int SearchAuthorVal = 0;
    /* package */ static final int SearchTextVal   = 1;
    /* package */ static final int SearchBothVal   = 2;
-
+                 static final int SearchTagVal    = 3;
+               
    // For returning a random quote
    private Random randomGen;
    private final int seed = 19580427;
@@ -73,6 +74,9 @@ public class QuoteList
          {  // Found a matching author or quote, save it
             // System.out.println ("Matched Both ");
             returnQuote.setQuote (quote);
+         } else if (mode == SearchTagVal && quote.getTag().toLowerCase().indexOf (searchString.toLowerCase()) != -1)
+         {
+            returnQuote.setQuote (quote);
          }
       }
       return returnQuote;
@@ -85,5 +89,23 @@ public class QuoteList
    public Quote getRandomQuote ()
    {
       return quoteArray.get (randomGen.nextInt (quoteArray.size()));
+   }
+   
+   //removes tag from all quotes
+   public void removeTagsFromAll()
+   {
+      for (Quote q : this.quoteArray)
+      {
+         q.removeTag();
+      }
+   }
+   
+   //assigns a tag to the quotes, overwriting the previous ones
+   public void tagAll(String tag)
+   {
+      for (Quote q : this.quoteArray)
+      {
+         q.setTag(tag);
+      }
    }
 }

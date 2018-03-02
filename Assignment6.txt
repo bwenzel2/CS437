@@ -1,32 +1,24 @@
-1. 
-The part of each test which addresses observability is the assertTrue statements. These statements observe the result of running each test and can compare the observed output with an expected output. 
-
-The part of each test which addresses controllability is the line which calls the search() method in QuoteList.java and the line of code which imports the quotes from the XML file. This is because both of these lines control some aspects of the state in which the program is and the outputs it will eventually produce. 
-
-
-
-
-
-
-2. 
-Please Note: this analysis assumes that the testRemoveDuplicates() test is meant to check that the first instance of the duplicate String is not removed. It does not check whether the duplicate String is actually removed. 
-
-A. The test file does not correspond to the RIPR model because it does not effectively show a failure with respect to the removeDuplicates() method’s functionality. In this test, we are unable to show an infected state because the intended behavior of this particular testRemoveDuplicates() test should remove the duplicate instance of the word “cake”. Since “cake” is not one of the first Strings in the words Object, we are unable to reveal the propagation of a potential error with removing a duplicate item. It is unlikely this test will propagate an error unless removeDuplicates() somehow removed the first item in the list of strings in the words Object which in this case is “cookie”. 
-
-
-B. Assuming the behavior of this test is to check whether the first duplicate item is left in tact as defined above, I’d write the test as
+User Story: The user should be able see the tag associated with a quote.
 
 @Test
-public void testRemoveDuplicates()
-{
-   words.add ("cookie");
-   words.add ("cake");
-   words.add ("cookie");
-   words.add ("pie");
-   words.removeDuplicates();
-   assertTrue ("removeDuplicates method", words.getFirst().equals ("cookie"));
+public void quote_getEmptyTag() {
+    Quote q = new Quote();
+    assertEquals("", q.getTag());
 }
 
-Now we can test to make sure that the removeDuplicates() method does not modify the first instance of the word “cookie”. 
+
+To do this, we added the getTag() method in the Quote class, and initially had it return a hard-coded empty string, which passed the test class. We had refactored the Quote class to include a tag field that stores the tag and is initialized to an empty string in the class constructor, and had the getter method return that field.
 
 
+
+
+Next we needed to be able to set the tag for a quote.
+
+@Test
+public void quote_setTag() {
+    Quote q = new Quote();
+    q.setTag("round");
+    assertEquals("Expected:", "round", q.getTag());
+}
+
+We initially implemented the method to set the tag class instance variable directly, which made it pass the testcase. To refactor, we don't want to have it set to an empty string, so we added a condition to ensure that the instance variable will only get set if the provided tag is not an empty string or white-space only.

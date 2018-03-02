@@ -47,7 +47,7 @@ public void run()
    boolean quit = false;
    while(!quit)
    {
-      System.out.println("Welcome to Quotes!\nRecent Searches:" + recentSearches + "\n\nTo search, enter 'search', to add a new quote, enter 'add', to quit, enter 'quit':");
+      System.out.println("Welcome to Quotes!\nRecent Searches:" + recentSearches + "\n\nTo search, enter 'search'\nTo add a new quote, enter 'add'\nTo tag or change tag on one or more quotes, enter 'tag'\nTo quit, enter 'quit':");
       reader = new Scanner(System.in);
       String cmd = reader.nextLine();
       if (cmd.equals("add"))
@@ -62,11 +62,11 @@ public void run()
       {
          System.out.println("Enter text to search for: ");
          String searchText = reader.nextLine();
-         System.out.println("Enter search scope: must be one of 'text', 'author', or 'both': ");
+         System.out.println("Enter search scope: must be one of 'text', 'author', 'both', or 'tag': ");
          String searchScope = reader.nextLine();
-         while (!searchScope.equals("text") && !searchScope.equals("author") && !searchScope.equals("both"))
+         while (!searchScope.equals("text") && !searchScope.equals("author") && !searchScope.equals("both") && !searchScope.equals("tag"))
          {
-            System.out.println("Incorrect scope specified, must be exactly one of 'text', 'author', or 'both'. Please enter search scope again: ");
+            System.out.println("Incorrect scope specified, must be exactly one of 'text', 'author', 'both', or 'tag'. Please enter search scope again: ");
             searchScope = reader.nextLine();
          }
          recentSearches.add(searchText);
@@ -76,7 +76,30 @@ public void run()
             
             
          //run search and print
-         findQuotes(searchText, searchScope);
+         QuoteList searchResults = findQuotes(searchText, searchScope);
+         printSearchResults(searchResults, searchText);
+      }
+      else if (cmd.equals("tag"))
+      {
+         System.out.println("First, find the quote(s) you wish to tag.");
+         System.out.println("Enter text to search for: ");
+         String searchText = reader.nextLine();
+         System.out.println("Enter search scope: must be one of 'text', 'author', 'both', or 'tag': ");
+         String searchScope = reader.nextLine();
+         while (!searchScope.equals("text") && !searchScope.equals("author") && !searchScope.equals("both") && !searchScope.equals("tag"))
+         {
+            System.out.println("Incorrect scope specified, must be exactly one of 'text', 'author', 'both', or 'tag'. Please enter search scope again: ");
+            searchScope = reader.nextLine();
+         }
+         recentSearches.add(searchText);
+         if (recentSearches.size() > 5)
+            recentSearches.remove(0);
+            
+            
+         QuoteList searchResults = findQuotes(searchText, searchScope);
+         printSearchResults(searchResults, searchText);
+         
+         System.out.println("Please choose a command:\n • Enter 'tag' to tag every quote in your search results (note that this will overwrite the existing tag for any quote that has one)\n • Enter 'remove' to remove the tag of every quote in your search results\n • Enter 'done' to go back to the main prompt");
       }
       else if (cmd.equals("quit"))
       {
@@ -100,7 +123,7 @@ public void loadQuotes()
    quoteList = qParser.getQuoteList();
 }
 
-public void findQuotes(String searchText, String searchScope)
+public QuoteList findQuotes(String searchText, String searchScope)
 {
    if (searchText != null && !searchText.equals(""))
    {  // Received a search request
@@ -119,23 +142,29 @@ public void findQuotes(String searchText, String searchScope)
          }
       }
 
-      QuoteList searchRes = quoteList.search(searchText, searchScopeInt);
-      Quote quoteTmp;
-      if (searchRes.getSize() == 0)
+      return quoteList.search(searchText, searchScopeInt);
+   }
+   //return empty quote list
+   return new QuoteList();
+}
+
+public void printSearchResults(QuoteList searchRes, String searchText)
+{
+   Quote quoteTmp;
+   if (searchRes.getSize() == 0)
+   {
+      System.out.println ("Your search - "+ searchText +" - did not match any quotes.");
+   }
+   else
+   {
+      System.out.println ("\n\n==== Results: ====");
+      for (int i = 0; i < searchRes.getSize() ; i++)
       {
-         System.out.println ("Your search - "+ searchText +" - did not match any quotes.");
+         quoteTmp = searchRes.getQuote(i);
+         System.out.println (quoteTmp.getQuoteText());
+         System.out.println ("--" + quoteTmp.getAuthor() + "");
       }
-      else
-      {
-         System.out.println ("\n\n==== Results: ====");
-         for (int i = 0; i < searchRes.getSize() ; i++)
-         {
-            quoteTmp = searchRes.getQuote(i);
-            System.out.println (quoteTmp.getQuoteText());
-            System.out.println ("--" + quoteTmp.getAuthor() + "");
-         }
-         System.out.println("\n");
-      }
+      System.out.println("\n");
    }
 }
 
