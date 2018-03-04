@@ -25,6 +25,7 @@ public class Quote
    {
       this.author = author;
       this.quoteText = quoteText;
+      this.tag = tag;
    }
 
    // Getter and setter for author

@@ -181,18 +181,18 @@ public void printSearchResults(QuoteList searchRes, String searchText)
 void addQuote(String quote, String author, String tag)
 {
    //error checking the quote, must not be a null string or an empty string
-   if (quote == null || quote.trim().length() < 0)
+   if (quote == null || quote.trim().length() <= 0)
    {
       System.out.println("Error: invalid quote provided (must contain at least one non-whitespace character)!");
       return;
    }
    //error checking the author, must not be a null string or an empty string
-   if (author == null || author.trim().length() < 0)
+   if (author == null || author.trim().length() <= 0)
    {
       System.out.println("Error: invalid author provided (must contain at least one non-whitespace character)!");
       return;
    }
-    if (tag == null || tag.trim().length() < 0)
+    if (tag == null || tag.trim().length() <= 0)
     {
         System.out.println("Error: invalid keyword provided (must contain at least one non-whitespace character)!");
         return;
