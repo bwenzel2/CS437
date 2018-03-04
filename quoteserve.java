@@ -47,7 +47,7 @@ public void run()
    boolean quit = false;
    while(!quit)
    {
-      System.out.println("Welcome to Quotes!\nRecent Searches:" + recentSearches + "\n\nTo search, enter 'search'\nTo add a new quote, enter 'add'\nTo tag or change tag on one or more quotes, enter 'tag'\nTo quit, enter 'quit':");
+      System.out.println("Welcome to Quotes!\nRecent Searches:" + recentSearches + "\n\nTo search, enter 'search'\nTo add a new quote, enter 'add'\nTo quit, enter 'quit':");
       reader = new Scanner(System.in);
       String cmd = reader.nextLine();
       if (cmd.equals("add"))
@@ -56,7 +56,12 @@ public void run()
          String quote = reader.nextLine();
          System.out.println("Enter author name: ");
          String author = reader.nextLine();
-         addQuote(quote, author);
+         System.out.println("Enter tag text: ");
+          String tag = reader.nextLine();
+          
+          
+          
+         addQuote(quote, author, tag);
       }
       else if (cmd.equals("search"))
       {
@@ -79,7 +84,7 @@ public void run()
          QuoteList searchResults = findQuotes(searchText, searchScope);
          printSearchResults(searchResults, searchText);
       }
-      else if (cmd.equals("tag"))
+      /* else if (cmd.equals("tag"))
       {
          System.out.println("First, find the quote(s) you wish to tag.");
          System.out.println("Enter text to search for: ");
@@ -100,7 +105,7 @@ public void run()
          printSearchResults(searchResults, searchText);
          
          System.out.println("Please choose a command:\n • Enter 'tag' to tag every quote in your search results (note that this will overwrite the existing tag for any quote that has one)\n • Enter 'remove' to remove the tag of every quote in your search results\n • Enter 'done' to go back to the main prompt");
-      }
+      }*/
       else if (cmd.equals("quit"))
       {
          System.out.println("Goodbye!\n");
@@ -139,7 +144,11 @@ public QuoteList findQuotes(String searchText, String searchScope)
          } else if (searchScope.equals ("both"))
          {
             searchScopeInt = QuoteList.SearchBothVal;
+         } else if (searchScope.equals ("tag"))
+         {
+             searchScopeInt = QuoteList.SearchTagVal;
          }
+          
       }
 
       return quoteList.search(searchText, searchScopeInt);
@@ -168,7 +177,7 @@ public void printSearchResults(QuoteList searchRes, String searchText)
    }
 }
 
-void addQuote(String quote, String author)
+void addQuote(String quote, String author, String tag)
 {
    //error checking the quote, must not be a null string or an empty string
    if (quote == null || quote.trim().length() < 0)
@@ -182,8 +191,16 @@ void addQuote(String quote, String author)
       System.out.println("Error: invalid author provided (must contain at least one non-whitespace character)!");
       return;
    }
+    if (tag == null || tag.trim().length() < 0)
+    {
+        System.out.println("Error: invalid keyword provided (must contain at least one non-whitespace character)!");
+        return;
+    }
+    
+
+    
    QuoteSaxParser qParser = new QuoteSaxParser(quoteFileName);
-   qParser.addQuote(quote, author);
+   qParser.addQuote(quote, author, tag);
    System.out.println("Quote added to the database!");
    //reload database to include the newly-added quote
    loadQuotes();

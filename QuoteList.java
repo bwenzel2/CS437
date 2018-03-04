@@ -55,6 +55,8 @@ public class QuoteList
     */
    public QuoteList search (String searchString, int mode)
    {
+       
+       System.out.println("Searching with int mode " + mode);
       QuoteList returnQuote = new QuoteList();
       Quote quote;
       for (int i = 0; i < quoteArray.size(); i++)
@@ -76,6 +78,7 @@ public class QuoteList
             returnQuote.setQuote (quote);
          } else if (mode == SearchTagVal && quote.getTag().toLowerCase().indexOf (searchString.toLowerCase()) != -1)
          {
+             System.out.println("SEARCHING TAG NOW!");
             returnQuote.setQuote (quote);
          }
       }

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <quote-list>
    <quote>
       <quote-text>I know that you believe you understand what you think I said, but I am not sure you realize that what you heard is not what I meant.</quote-text>
@@ -45,4 +45,9 @@
       <author>The Anonymous Researcher</author>
 	  <tag>anonymous</tag>
    </quote>
+<quote>
+        <quote-text>This is a very simple test</quote-text>
+        <author>Michael Johnsen</author>
+        <tag>testing</tag>
+    </quote>
 </quote-list>

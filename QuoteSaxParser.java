@@ -51,7 +51,7 @@ public QuoteList getQuoteList()
    return handler.getQuoteList();
 }
 
-public void addQuote(String quote, String author)
+public void addQuote(String quote, String author, String tag)
 {
    try
    {
@@ -80,8 +80,16 @@ public void addQuote(String quote, String author)
       authorText.setTextContent(author);
       newQuote.appendChild(authorText);
       
+       //Michael Added this
+       Node tagText = document.createElement("tag");
+       tagText.setTextContent(tag);
+       newQuote.appendChild(tagText);
+       //End Michael Add
+       
+       
       parent.appendChild(newQuote);
-      
+       
+
       
       Transformer transformer = TransformerFactory.newInstance().newTransformer();
       transformer.setOutputProperty(OutputKeys.INDENT, "yes");

@@ -1,4 +1,4 @@
-User Story: The user should be able see the tag associated with a quote.
+User Story: The user should be able create a quote in the database with a tag associate to it. The user should also be able to search quotes by tag. 
 
 @Test
 public void quote_getEmptyTag() {
@@ -8,7 +8,6 @@ public void quote_getEmptyTag() {
 
 
 To do this, we added the getTag() method in the Quote class, and initially had it return a hard-coded empty string, which passed the test class. We had refactored the Quote class to include a tag field that stores the tag and is initialized to an empty string in the class constructor, and had the getter method return that field.
-
 
 
 
@@ -22,3 +21,8 @@ public void quote_setTag() {
 }
 
 We initially implemented the method to set the tag class instance variable directly, which made it pass the testcase. To refactor, we don't want to have it set to an empty string, so we added a condition to ensure that the instance variable will only get set if the provided tag is not an empty string or white-space only.
+
+
+
+
+
