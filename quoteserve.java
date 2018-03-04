@@ -173,6 +173,7 @@ public void printSearchResults(QuoteList searchRes, String searchText)
          quoteTmp = searchRes.getQuote(i);
          System.out.println (quoteTmp.getQuoteText());
          System.out.println ("--" + quoteTmp.getAuthor() + "");
+         System.out.println("Keyword: " + quoteTmp.getTag());
       }
       System.out.println("\n");
    }
