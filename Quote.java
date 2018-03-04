@@ -18,11 +18,10 @@ public class Quote
    public Quote ()
    {
       //make the tag empty
-      tag = "";
    }
 
    // Constructor that assigns both strings
-   public Quote (String author, String quoteText)
+   public Quote (String author, String quoteText, String tag)
    {
       this.author = author;
       this.quoteText = quoteText;
@@ -51,24 +50,7 @@ public class Quote
    //Getter for tags
    public void setTag(String tag)
    {
-      //don't add empty strings or whitespaces as tags
-      if ( !(tag.trim().equals("")) )
-         this.tag=tag;
-   }
-   
-   //check if the quote as a given tag
-   public boolean hasTag(String tag)
-   {
-      if (this.tag.equals(""))
-         return false;
-      else 
-         return true;
-   }
-   
-   //remove a given tag
-   public void removeTag()
-   {
-         this.tag = "";
+        this.tag=tag;
    }
    
    //return a list of all tags
@@ -80,6 +62,6 @@ public class Quote
    @Override
    public String toString ()
    {
-      return "Quote {" + "author='" + author + '\'' + ", quoteText='" + quoteText + '\'' + '}';
+      return "Quote {" + "author='" + author + '\'' + ", quoteText='" + quoteText + '\'' + ", tag='" + tag + '\'' + '}';
    }
 }

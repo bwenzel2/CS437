@@ -62,6 +62,7 @@ public class QuoteList
       for (int i = 0; i < quoteArray.size(); i++)
       {
          quote = quoteArray.get (i);
+         System.out.println(quote.toString());
          if (mode == SearchAuthorVal && quote.getAuthor().toLowerCase().indexOf (searchString.toLowerCase()) != -1)
          {  // Found a matching author, save it
             // System.out.println ("Matched Author ");
@@ -94,21 +95,21 @@ public class QuoteList
       return quoteArray.get (randomGen.nextInt (quoteArray.size()));
    }
    
-   //removes tag from all quotes
+   /*//removes tag from all quotes
    public void removeTagsFromAll()
    {
       for (Quote q : this.quoteArray)
       {
          q.removeTag();
       }
-   }
+   }*/
    
-   //assigns a tag to the quotes, overwriting the previous ones
+   /*//assigns a tag to the quotes, overwriting the previous ones
    public void tagAll(String tag)
    {
       for (Quote q : this.quoteArray)
       {
          q.setTag(tag);
       }
-   }
+   }*/
 }

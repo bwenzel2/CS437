@@ -146,6 +146,7 @@ public QuoteList findQuotes(String searchText, String searchScope)
             searchScopeInt = QuoteList.SearchBothVal;
          } else if (searchScope.equals ("tag"))
          {
+             System.out.println("Hello there");
              searchScopeInt = QuoteList.SearchTagVal;
          }
           

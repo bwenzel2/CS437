@@ -50,4 +50,14 @@
         <author>Michael Johnsen</author>
         <tag>testing</tag>
     </quote>
+<quote>
+        <quote-text>Ben is a super awesome partner</quote-text>
+        <author>Michael Johnsen</author>
+        <tag>random</tag>
+    </quote>
+<quote>
+        <quote-text>a very simple test</quote-text>
+        <author>Michael</author>
+        <tag>asdf</tag>
+    </quote>
 </quote-list>
