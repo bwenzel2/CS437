@@ -1,14 +1,4 @@
-User Story: The user should be able create a quote in the database with a tag associate to it. The user should also be able to search quotes by tag. 
-
-@Test
-public void quote_getEmptyTag() {
-    Quote q = new Quote();
-    assertEquals("", q.getTag());
-}
-
-For this first test, this simply test to make sure we can successfully add a quote to our database with a tag. To do this successfully, we needed to modify the quoteserve.java file to accept tags when adding an item. We also needed to modify the Quote Sax Parser to successfully write the new lines to the XML file. 
-
-
+User Story: The user shall be able create a quote in the database with a tag associate to it. The user shall be able to search quotes by tag. 
 
 @Test
 public void quote_setTag() {
@@ -17,8 +7,9 @@ public void quote_setTag() {
     assertEquals("Expected:", "round", q.getTag());
 }
 
-For this next test, we need to see if we can search for a tag in a quote. The Quote class needed to be modified to accept tags into them. The Quote Sax handler was changed to find the xml object called "tag" and add the tag to the Quote object. quoteserve.java needed to be modified to prompt the user that they can search for tags in a particular quote. QuoteList needed to be modified to search for a tag in its list of quotes. 
+For this first test, we're checking to see if we can successfully create a new Quote with a tag associated with it. This starts the ability to search for Quotes with a given tag. 
 
+For refactoring, we needed to add a field in the Quote object and a setTag() and getTag() methods. Once we did this, the test passed. 
 
 //this adds a quote with a tag to the database, then searches for a quote by that tag and compares the result quote with the one added earlier
 @Test
@@ -32,6 +23,11 @@ public void add_tag_and_search() {
     assertTrue( tagSearchResults.getSize() == 1 && quotesAreEqual(tagSearchResults.getQuote(0), newQuote) );
 }   
 
+
+This next test combines testing the functionality of creating a new Quote object, then saving that quote object into the xml file and then reloading the quote. It in essence tests both functionality of adding a quote to the database and searching for that same quote in the database. 
+
+Refactoring for this was a little more intense. We needed to modify the Quote constructor to pass in a tag. We also needed to modify the quoteserve.java document with the ability to add a quote into the database with a "tag". Then, we needed to modify the QuoteList object to make it searchable via a "tag". Lastly, we needed to make sure the xml file loads a quote's tag successfully by finding a tag section of the xml document and adding it to the Quote object and then to the QuoteList. Once this was completed, the test successfully passed. 
+
 //helper method that returns whether two quotes have identical text, author, and tag fields
 boolean quotesAreEqual(Quote q1, Quote q2)
 {
@@ -40,3 +36,4 @@ boolean quotesAreEqual(Quote q1, Quote q2)
             q1.getTag().equals(q2.getTag());
 }
 
+This is simply a helper method of code which could potentially be reused. 

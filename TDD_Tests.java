@@ -44,5 +44,4 @@ public class TDD_Tests {
                q1.getAuthor().equals(q2.getAuthor()) &&
                q1.getTag().equals(q2.getTag());
     }
-    
 }
