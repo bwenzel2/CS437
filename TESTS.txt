@@ -1,0 +1,399 @@
+####### A1, B1 #######
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://cs.gmu.edu:8443/offutt/servlet/quotes.quoteserve" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/offutt/servlet/quotes.quoteserve</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=author</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td &gt; input[name=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=td &gt; p</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
+
+
+
+####### A1, B2 #######
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://cs.gmu.edu:8443/offutt/servlet/quotes.quoteserve" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/offutt/servlet/quotes.quoteserve</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=quote</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td &gt; input[name=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=td &gt; p</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
+
+
+####### A1, B3 #######
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://cs.gmu.edu:8443/offutt/servlet/quotes.quoteserve" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/offutt/servlet/quotes.quoteserve</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=both</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td &gt; input[name=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=td &gt; p</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
+
+
+
+####### A2, B1 #######
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://cs.gmu.edu:8443/offutt/servlet/quotes.quoteserve" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/offutt/servlet/quotes.quoteserve</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=author</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchText</td>
+	<td>person</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td &gt; input[name=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=td &gt; p</td>
+	<td>Your search - person - did not match any quotes.</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
+
+
+####### A2, B2 #######
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://cs.gmu.edu:8443/offutt/servlet/quotes.quoteserve" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/offutt/servlet/quotes.quoteserve</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchText</td>
+	<td>nothing</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=quote</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td &gt; input[name=&quot;submit&quot;]</td>
+	<td>Nothing ever becomes real till it is experienced; even a proverb is no proverb to you till your life has illustrated it. —John Keats He that leaveth nothing to chance will do few things ill, but he will do very few things. —Halifax, Greg Benford and David Brin, Heart of the Comet, Bantam 1986 I'm having trouble calibrating myself because I keep calibrating myself to nothing. —Mike McCracken To avoid criticism, do nothing, say nothing, be nothing. —Elbert Hubbard In baseball, you don't know nothing. —Yogi Berra When you're doing nothing it's hard to know when to stop. —Anonymous If you eat a live frog in the morning, nothing worse will happen to either of you for the rest of the day. —??? Nothing is really work unless you'd rather be doing something else. —James M. Barrie Science is nothing but trained and organized common-sense. —??? Everything is changing but nothing changes. —Liu Jian Nothing levels a playing field like a better idea. —Stanley I. Mason, Jr. There's nothing so dangerous for manipulators as people who think for themselves. —Meg Greenfield Freedom to be your best means nothing unless you're willing to do your best. —Colin Powell There's nothing wrong with America that can't be fixed by what's right with America. —Bill Clinton. First inaugural address, 1993. Not everything that is faced can be changed, but nothing can be changed until it is faced. —James Baldwin In the world there is nothing more submissive and weak than water. Yet for attacking that which is hard and strong nothing can surpass it. —Lao Tzu, Chinese Taoist philosopher, b c.500 BCE If you have nothing to say, you don't have to put it into words. —Alex Brodsky His clarity was a liability because he had nothing to say. —Arthur Balfour, British politician (about Herbert Asquith) Criticism is something we can avoid easily by saying nothing, doing nothing, and being nothing. —Aristotle</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=dl</td>
+	<td>Nothing ever becomes real till it is experienced; even a proverb is no proverb to you till your life has illustrated it. —John Keats He that leaveth nothing to chance will do few things ill, but he will do very few things. —Halifax, Greg Benford and David Brin, Heart of the Comet, Bantam 1986 I'm having trouble calibrating myself because I keep calibrating myself to nothing. —Mike McCracken To avoid criticism, do nothing, say nothing, be nothing. —Elbert Hubbard In baseball, you don't know nothing. —Yogi Berra When you're doing nothing it's hard to know when to stop. —Anonymous If you eat a live frog in the morning, nothing worse will happen to either of you for the rest of the day. —??? Nothing is really work unless you'd rather be doing something else. —James M. Barrie Science is nothing but trained and organized common-sense. —??? Everything is changing but nothing changes. —Liu Jian Nothing levels a playing field like a better idea. —Stanley I. Mason, Jr. There's nothing so dangerous for manipulators as people who think for themselves. —Meg Greenfield Freedom to be your best means nothing unless you're willing to do your best. —Colin Powell There's nothing wrong with America that can't be fixed by what's right with America. —Bill Clinton. First inaugural address, 1993. Not everything that is faced can be changed, but nothing can be changed until it is faced. —James Baldwin In the world there is nothing more submissive and weak than water. Yet for attacking that which is hard and strong nothing can surpass it. —Lao Tzu, Chinese Taoist philosopher, b c.500 BCE If you have nothing to say, you don't have to put it into words. —Alex Brodsky His clarity was a liability because he had nothing to say. —Arthur Balfour, British politician (about Herbert Asquith) Criticism is something we can avoid easily by saying nothing, doing nothing, and being nothing. —Aristotle</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
+
+
+####### A2, B3 #######
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://cs.gmu.edu:8443/offutt/servlet/quotes.quoteserve" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/offutt/servlet/quotes.quoteserve</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchText</td>
+	<td>Anonymous</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=both</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td &gt; input[name=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=dl</td>
+	<td>'Tis but a dream we share, to build castles out of air. —Anonymous My life is has been one continual search for answers to one short question. The subject and the answer changes, but the question remains simply&quot; &quot;Why?&quot;. —The Anonymous Researcher A few weeks in the lab can save several hours in the library. —Gene Spafford (repeated from anonymous) Maturity is knowing when and where to be immature. —Anonymous What is the burning question on the mind of every dyslexic existentialist? Is there a dog? —Anonymous If it works, it must be possible —Anonymous When you're doing nothing it's hard to know when to stop. —Anonymous In the west you can look further and see less than any other place in the world. —Anonymous Arizona Rancher Some people come into our lives and quietly go ... others stay for awhile and leave footprints on our hearts, and we are never, ever the same. —Anonymous</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
+
+
+####### A3, B1 #######
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://cs.gmu.edu:8443/offutt/servlet/quotes.quoteserve" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/offutt/servlet/quotes.quoteserve</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchText</td>
+	<td>Jeff Offutt</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=author</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td &gt; input[name=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=dl</td>
+	<td>To actors, the greatest people in the world. Who else can, by using their own problems, causing themselves so much pain, bring others so much joy. I wish I had the strength. —Jeff Offutt I try not to form opinions, rather, I observe and learn, and when necessary I make decisions. —Jeff Offutt (it should be true) The true subject matter of the tester is not testing, but the design of test cases. —Jeff Offutt Life is like a basketball game. Sometimes you're ahead, sometimes you're behind. The important thing is to be ahead when the buzzer goes off. —Jeff Offutt Programming is to computer science as arithmetic is to mathematics. —Jeff Offutt His head's so far up his ass he eats recursively. —Jeff Offutt Show me a man who is perfect and I'll show you a man who has no goals. —Jeff Offutt Research: Survival of the most convincing. —Jeff Offutt Abstraction should be used to _handle_ complexity, not to _ignore_ it. —Jeff Offutt A quote, like an epigram, is only expressive if it says something to the reader. —Jeff Offutt We only really understand something when we can explain it in simple terms. —Jeff Offutt Sellers and scientists will never trust each other. Sellers have one goal-- to sell-- and any means justifies the ends. It is perfectly valid to manipulate emotions, obfuscate the truth, and utilize confusion to make the sale. Scientists, on the other hand, value only the truth. Scientists try very hard to ignore/eliminate emotions, reduce confusion, and clarify the truth. An emotional response must be analyzed to determine if it has a logical basis, or if it should be discounted. Scientists don't trust salespersons because they do not value truth, and salespersons don't trust scientists because they are hard to sell to. — Jeff Offutt Sometimes I can sound very clear ... until you try to put it into your own words. That is when I know I am at my clearest. — Jeff Offutt Politics is simply adjusting rules that objectively provide for human needs to satisfy human subjective desires. —Jeff Offutt The problem with manu of our students is they come to the table already full of popcorn, and we're trying to feed them vegetables. —Jeff Offutt To fight with someone, we must first acknowledge that person as our equal. —Jeff Offutt A science is any discipline in which fifth graders today can go beyond the most incredible geniuses of yesterday. —Jeff Offutt Like a stone thrown in the ocean, teachers make small changes that are easily overlooked, but whose effects continue forever in ways that are seldom attributed. An education is one thing that can never be taken away from you, and a teacher is a person who always stays with you. —Jeff Offutt I don't know which technologies will survive the internet era, but I do know that none of us will. —Jeff Offutt (ICECCS 2000 Panel) I'm not sure if anybody will be confused enough to be confused about this, but never hurts to preempt confusion with clarity. —Jeff Offutt (writing) Computer Scientists divide and conquer. Systems Engineers aggregate and visualize. —Jeff Offutt Client-side input validation is like letting your opponent hold your shield while he bangs his sword on it! —Jeff Offutt The world wide web is the nervous system of the human race. —Jeff Offutt The worst, the hardest, moment of my life has become the rock that I reach out to when things go bad. If I survived that then, I can survive this now. —Jeff Offutt The hardest kind of cognitive dissonance is when facts contradict a belief we arrived at through opinions and prejudism. —Jeff Offutt Young people think quick thoughts. Old people think deep thoughts. Leaders think long thoughts. —Jeff Offutt In life, as in baseball, you don't have to be strong to hit a home run. You just have to hit it dead center. —Jeff Offutt If you ignore quality, everything else is easy. —Jeff Offutt Engineers take ideas invented by quick thinkers and build products for slow thinkers. —Jeff Offutt If you achieve all your dreams, you didn't dream big enough. —Jeff Offutt Ad writers assume we all have room temperature IQs. —Jeff Offutt Ignorance always grows faster than knowledge. Why? Because the more we know, the more we realize we don't know. Every new fact raises 10 questions. —Jeff Offutt Don't let your weaknesses block your strengths. —Jeff Offutt The only true failure in life is not trying. —Jeff Offutt Advice to all students: Don't try to get As. Try to learn it all. —Jeff Offutt Some coaches fill out lineups. Good coaches teach skill. The best coaches teach boys how to be men. —Jeff Offutt Data is not the plural of anecdote. —Jeff Offutt When you stop learning, you start dying. —Jeff Offutt To be sucessful, you must first learn to lose. —Jeff Offutt We all die twice. First when our heart stops beating, and second when the last person who remembers us dies. —Jeff Offutt If you don't solve the problem before writing the code, you're creating more problems. —Jeff Offutt Staying young is simple. Every year, go somewhere new, do something new, meet someone new, learn something new. —Jeff Offutt</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
+
+
+####### A3, B2 #######
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://cs.gmu.edu:8443/offutt/servlet/quotes.quoteserve" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/offutt/servlet/quotes.quoteserve</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=quote</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchText</td>
+	<td>I think</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td &gt; input[name=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=dl</td>
+	<td>I think Little League is wonderful. It keeps the kids out of the house. —Yogi Berra</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
+
+
+####### A3, B3 #######
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://cs.gmu.edu:8443/offutt/servlet/quotes.quoteserve" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/offutt/servlet/quotes.quoteserve</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=searchText</td>
+	<td>How long must we wait for the world to end?</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=both</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td &gt; input[name=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=td &gt; p</td>
+	<td>Your search - How long must we wait for the world to end? - did not match any quotes.</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
