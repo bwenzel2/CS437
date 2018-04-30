@@ -39,7 +39,7 @@ public class CalTests {
 	//  PREDICATE 2
 	//================
 	
-	//Predicate 2, row 2, TFT
+	//Predicate 2, major clause a, row 2, TFT
 	//a = T
 	//b = F
 	//c = T
@@ -55,19 +55,19 @@ public class CalTests {
 		assertTrue(28 == result);   
 	}
 	
-	//Predicate 2, row 3, TTF
+	//Predicate 2, major clause a, row 3, TTF
 	//a = T
 	//b = T
 	//c = F
 	// THIS IS INFEASIBLE, any multiple of 100 is necessary a multiple of 4, so you cannot have a = T and b = T at the same time
 	
-	//Predicate 2, row 4, TFF
+	//Predicate 2, major clause a, row 4, TFF
 	//a = T
 	//b = F
 	//c = F
 	// THIS IS INFEASIBLE, you can't have b = F and c = F, because you would need a number that is a multiple of 400 but not of 100, which is impossible
 	
-	//Predicate 2, row 6, FTF
+	//Predicate 2, major clause a, row 6, FTF
 	//a = F
 	//b = T
 	//c = F
@@ -83,7 +83,7 @@ public class CalTests {
 		assertTrue(28 == result);   
 	}
 	
-	//Predicate 2, row 7, FFT
+	//Predicate 2, major clause a, row 7, FFT
 	//a = F
 	//b = F
 	//c = T
@@ -99,13 +99,13 @@ public class CalTests {
 		assertTrue(28 == result);   
 	}
 	
-	//Predicate 2, row 8, FFF
+	//Predicate 2, major clause a, row 8, FFF
 	//a = F
 	//b = F
 	//c = F
 	//INFEASIBLE, because there is no combination that is evenly divisible by 100 but not by 4, because 4 is a factor of 100
 	
-	//Predicate 2, row 5, FTT
+	//Predicate 2, major clause b, row 5, FTT
 	//a = F
 	//b = T
 	//c = T
@@ -121,7 +121,7 @@ public class CalTests {
 		assertTrue(28 == result);   
 	}
 	
-	//Predicate 2, row 7, FTT
+	//Predicate 2, major clause b, row 7, FTT
 	//a = F
 	//b = F
 	//c = T
@@ -137,7 +137,7 @@ public class CalTests {
 		assertTrue(28 == result);   
 	}
 	
-	//Predicate 2, row 5, FTT
+	//Predicate 2, major clause c, row 5, FTT
 	//a = F
 	//b = T
 	//c = T
@@ -153,7 +153,7 @@ public class CalTests {
 		assertTrue(28 == result);   
 	}
 	
-	//Predicate 2, row 6, FTF
+	//Predicate 2, major clause c, row 6, FTF
 	//a = F
 	//b = T
 	//c = F
