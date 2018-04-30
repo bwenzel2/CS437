@@ -184,7 +184,7 @@ public class CalTests {
 		int month1 = 2;
 		int month2 = 4;
 		int result = Cal.cal(month1, day1, month2, day2, 1998);
-		System.out.println("lol" + result);
+		
 		assertTrue(59 == result);   
 	 }
 	
